@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import logo from '@/assets/vue.svg';
+import logo from "@/assets/imgs/vue.svg";
 </script>
 
 <template>
-  <div class="home" >v3</div>
+  <div class="home">春</div>
   <img :src="logo" />
 </template>
 
