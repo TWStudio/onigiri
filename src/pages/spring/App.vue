@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import logo from "@/assets/imgs/vue.svg";
+console.warn('import.meta.env', import.meta.env);
+console.warn('process.env', process.env);
 </script>
 
 <template>
   <div class="home">春</div>
-  <img :src="logo" />
 </template>
 
 <style scoped>

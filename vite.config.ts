@@ -1,11 +1,16 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 
 const root = 'src/pages/';
 
 // https://vitejs.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ command, mode }) => {
+  // 获取环境变量
+  const env: Partial<ImportMeta> = loadEnv(mode, process.cwd(), "VITE_");
+  console.warn('command', command);
+  console.warn('mode', mode);
+  console.warn('env', env);
   return {
     root,
     base: '',
@@ -13,6 +18,9 @@ export default defineConfig(() => {
       alias: {
         '@': resolve(__dirname, './src'),
       },
+    },
+    define: {
+      'process.env': env,
     },
     plugins: [vue()],
     build: {

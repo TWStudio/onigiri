@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue,.ts src --fix",
     "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "test-env": "VITE_MY_KEY=caicai vite --mode test",
+    "test-stage": "vite build --mode staging"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^17.1.0",
