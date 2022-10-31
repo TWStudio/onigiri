@@ -2,6 +2,8 @@ import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import * as dotenv from 'dotenv';
 import { resolve } from 'path';
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
 
 const root = 'src/pages/';
 
@@ -24,7 +26,12 @@ export default defineConfig(({ command, mode }) => {
     define: {
       'process.env': env,
     },
-    plugins: [vue()],
+    plugins: [
+      vue(),
+      Components({
+        resolvers: [VantResolver()],
+      }),
+    ],
     build: {
       rollupOptions: {
         input: {
