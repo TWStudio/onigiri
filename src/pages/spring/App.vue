@@ -1,6 +1,5 @@
 <script setup lang="ts">
 console.warn('import.meta.env', import.meta.env);
-console.warn('process.env', process.env);
 </script>
 
 <template>
