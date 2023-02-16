@@ -19,6 +19,7 @@ const onSpringBtn = () => {
 .spring {
   padding: 24px;
   .home {
+    font-size: 28px;
     color: #07c160;
   }
 }
